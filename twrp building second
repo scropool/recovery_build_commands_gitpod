@@ -1,0 +1,5 @@
+rm -rf device/samsung/* && git clone https://github.com/YZBruh/recovery_device_samsung_a24 ./device/samsung/a24
+. build/envsetup.sh \
+&& lunch twrp_a24-eng \
+&& make clean \
+&& make -j16 recoveryimage
