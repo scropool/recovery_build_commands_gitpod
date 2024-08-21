@@ -5,7 +5,7 @@ cd twrp
 repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
 repo sync
 git clone https://github.com/YZBruh/recovery_device_samsung_a24
-mkdir -p device/samsung/a24 && mv a24/ device/samsung/a24 && rm -rf *a24
+mkdir -p device/samsung/a24 && cp -r recovery_device_samsung_a24/* device/samsung/a24/ && rm -rf recovery_device_samsung_a24
 export ALLOW_MISSING_DEPENDENCIES=true \
 . build/envsetup.sh \
 && lunch twrp_a24-eng \
