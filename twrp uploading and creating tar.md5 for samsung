@@ -1,9 +1,7 @@
-cd out/target/product/a24
-
-FNAME=recovery.img
-          TARGET_FNAME=$(echo "${FNAME}" | rev | cut -d. -f2- | rev)
-          tar -H ustar -c "${FNAME}" > "${TARGET_FNAME}.tar"
-          md5sum -b -t "${TARGET_FNAME}.tar" >> "${TARGET_FNAME}.tar"
-          mv "${TARGET_FNAME}.tar" "${TARGET_FNAME}.tar.md5"
-
-          curl -u ":apianahtarin" -F "file=@${PWD}/recovery.tar.md5" https://pixeldrain.com/api/file
+cd out/target/product/a24 && \
+FNAME=recovery.img && \
+TARGET_FNAME=$(echo "${FNAME}" | rev | cut -d. -f2- | rev) && \
+tar -H ustar -c "${FNAME}" > "${TARGET_FNAME}.tar" && \
+md5sum -b -t "${TARGET_FNAME}.tar" >> "${TARGET_FNAME}.tar" && \
+mv "${TARGET_FNAME}.tar" "${TARGET_FNAME}.tar.md5" && \
+curl -u ":apianahtari" -F "file=@${PWD}/recovery.tar.md5" https://pixeldrain.com/api/file
