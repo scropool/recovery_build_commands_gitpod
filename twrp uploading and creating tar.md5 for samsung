@@ -1,3 +1,5 @@
+cd out/target/product/a24
+
 FNAME=recovery.img
           TARGET_FNAME=$(echo "${FNAME}" | rev | cut -d. -f2- | rev)
           tar -H ustar -c "${FNAME}" > "${TARGET_FNAME}.tar"
